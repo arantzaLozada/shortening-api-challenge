@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
 @import 'variables';
 @import 'mixins';
 @import 'utilities';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+@import '../components/Navbar/navbar';
+@import '../components/Header/header';
+@import '../components/Links/links';
 
 * {
   margin: 0px;
@@ -11,13 +16,31 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.125em;
+  // font-size: 1.125em;
 }
 
 ul {
   list-style: none;
 }
 
+li {
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+input {
+  font-size: inherit;
+  border: none;
+  outline: none;
 }

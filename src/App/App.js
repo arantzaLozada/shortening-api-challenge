@@ -1,5 +1,16 @@
+import { Header } from '../components/Header/Header';
+import { Links } from '../components/Links/Links';
+import { Navbar } from '../components/Navbar/Navbar';
+
 import '../scss/app.scss';
 
 export function App() {
-  return <div className="container-full">yes</div>;
+  return (
+    <>
+      <Navbar />
+      <Header />
+      <Links>yes</Links>
+      <div>yes</div>
+    </>
+  );
 }

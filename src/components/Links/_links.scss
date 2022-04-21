@@ -1,0 +1,37 @@
+.links {
+  margin-top: 140px;
+  background-color: #eff1f7;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border: $debug;
+  border-radius: 10px;
+  background-image: url('../../assets/bg-shorten-desktop.svg'),
+    linear-gradient(#3b3054, #3b3054 100%);
+  background-size: cover;
+  position: relative;
+  top: -60px;
+}
+
+.links-input {
+  margin-right: 10px;
+  width: 600px;
+  padding: 16px 25px;
+  border-radius: 10px;
+}
+
+.links-btn {
+  color: #ffffff;
+  font-weight: 700;
+  background-color: map-get($color, cyanPrimary);
+  border-radius: 10px;
+  padding: 16px 25px;
+  margin-left: 10px;
+  &:hover {
+    background-color: #aedfdf;
+  }
+}

@@ -1,11 +1,22 @@
 .container {
   max-width: 1200px;
   margin: auto;
-  border: $debug;
+  // border: $debug;
 }
 
 .container-full {
   width: 100%;
   margin: auto;
   border: $debug;
+}
+
+.button-primary {
+  color: #ffffff;
+  font-weight: 700;
+  background-color: map-get($color, cyanPrimary);
+  border-radius: 25px;
+  padding: 13px 20px;
+  &:hover {
+    background-color: rgba(42, 207, 207, 0.49);
+  }
 }

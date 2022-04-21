@@ -1,0 +1,43 @@
+.navbar {
+  position: relative;
+  top: 50px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+li:nth-child(1) {
+  img {
+    position: relative;
+    top: 10px;
+  }
+}
+
+li:nth-child(2) {
+  margin-left: 50px;
+}
+
+li:nth-child(-1n + 5):not(:first-child) {
+  a {
+    color: map-get($color, rayishViolet);
+    padding: 0px 15px 0px 15px;
+    font-weight: 700;
+
+    &:hover {
+      color: #232127;
+    }
+  }
+}
+
+.navbar-buttons {
+  margin: auto 0px;
+}
+
+button:nth-child(1) {
+  color: map-get($color, rayishViolet);
+  font-weight: 700;
+  margin-right: 30px;
+  &:hover {
+    color: #232127;
+  }
+}
