@@ -25,7 +25,11 @@
   background-color: map-get($color, cyanPrimary);
   border-radius: 10px;
   padding: 10px 25px;
-  &:hover {
+  &--hover:hover {
     background-color: #aedfdf;
+  }
+
+  &--copied {
+    background-color: map-get($color, darkViolet);
   }
 }

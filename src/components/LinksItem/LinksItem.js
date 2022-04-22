@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 export function LinksItem() {
+  const [copied, setCopied] = useState(false);
   return (
     <>
       <section className="links-item-container">
@@ -12,7 +16,17 @@ export function LinksItem() {
             <span className="links-item--shorter">
               https://shrtco.de/o9kMSW
             </span>
-            <button className="links-item-btn">Copy</button>
+            <CopyToClipboard text="yes" onCopy={() => setCopied(true)}>
+              <button
+                className={
+                  !copied
+                    ? 'links-item-btn links-item-btn--hover'
+                    : 'links-item-btn links-item-btn--copied'
+                }
+              >
+                {!copied ? 'Copy' : 'Copied!'}
+              </button>
+            </CopyToClipboard>
           </div>
         </li>
       </section>
