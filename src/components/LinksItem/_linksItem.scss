@@ -1,0 +1,31 @@
+.links-item-container {
+  padding-bottom: 40px;
+}
+.links-item {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  border-radius: 10px;
+  padding: 16px 26px;
+  &--url {
+    color: map-get($color, veryDarkBlue);
+  }
+  &--shorter {
+    color: map-get($color, cyanPrimary);
+    margin-right: 20px;
+  }
+}
+
+.links-item-btn {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: map-get($color, cyanPrimary);
+  border-radius: 10px;
+  padding: 10px 25px;
+  &:hover {
+    background-color: #aedfdf;
+  }
+}

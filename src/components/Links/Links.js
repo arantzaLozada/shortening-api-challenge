@@ -14,7 +14,7 @@ export function Links({ children }) {
             <button className="links-btn">Shorten It!</button>
           </form>
         </div>
-        <div>{children}</div>
+        <ul className="container">{children}</ul>
       </section>
     </>
   );

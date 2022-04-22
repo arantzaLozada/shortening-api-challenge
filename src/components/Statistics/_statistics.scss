@@ -1,0 +1,94 @@
+.statistics-container {
+  background-color: #eff1f7;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.statistics-title {
+  text-align: center;
+  margin-bottom: 100px;
+  h2 {
+    color: map-get($color, darkViolet);
+    font-size: 35px;
+  }
+  p {
+    margin-top: 20px;
+    color: map-get($color, rayishViolet);
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 700;
+  }
+}
+
+.statistics-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .card {
+    background-color: #fff;
+    max-width: 370px;
+    height: 270px;
+    border-radius: 10px;
+    .card-img {
+      margin-left: 30px;
+      width: 80px;
+      height: 80px;
+      background-color: map-get($color, darkViolet);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -30px;
+    }
+    .card-content {
+      padding: 0px 30px;
+      h3 {
+        color: map-get($color, veryDarkViolet);
+        font-weight: 700;
+      }
+      p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: map-get($color, rayishViolet);
+        line-height: 1.8;
+        font-weight: 500;
+      }
+    }
+    &--second {
+      position: relative;
+      top: 30px;
+    }
+    &--thrird {
+      position: relative;
+      top: 60px;
+    }
+  }
+}
+
+.line-desktop {
+  width: 50px;
+  background-color: map-get($color, cyanPrimary);
+  border: 5px solid map-get($color, cyanPrimary);
+}
+
+//SECTION BANNER
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  background-image: url('../../assets/bg-shorten-desktop.svg'),
+    linear-gradient(#3b3054, #3b3054 100%);
+  background-size: cover;
+  h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  button {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}

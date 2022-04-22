@@ -1,6 +1,9 @@
+import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
 import { Links } from '../components/Links/Links';
+import { LinksItem } from '../components/LinksItem/LinksItem';
 import { Navbar } from '../components/Navbar/Navbar';
+import { Statistics } from '../components/Statistics/Statistics';
 
 import '../scss/app.scss';
 
@@ -9,8 +12,11 @@ export function App() {
     <>
       <Navbar />
       <Header />
-      <Links>yes</Links>
-      <div>yes</div>
+      <Links>
+        <LinksItem />
+      </Links>
+      <Statistics />
+      <Footer />
     </>
   );
 }

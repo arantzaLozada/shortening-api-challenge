@@ -6,15 +6,15 @@ export function Header() {
   return (
     <>
       <header className="container header">
-        <section>
-          <h1>More than just shroten links</h1>
+        <section className="header-right">
+          <h1>More than just shorter links</h1>
           <p>
             Build your brand's recognition and get detailed insights o how your
             links are performing
           </p>
           <button className="button-primary"> Get Started</button>
         </section>
-        <section>
+        <section className="header-left">
           <img src={hero} alt="Working" />
         </section>
       </header>

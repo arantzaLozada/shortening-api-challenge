@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-section:nth-child(1) {
+.header-right {
   width: 60%;
   margin-right: 20px;
   h1 {
@@ -26,7 +26,7 @@ section:nth-child(1) {
   }
 }
 
-section:nth-child(2) {
+.header-left {
   img {
     width: 100%;
     max-width: 600px;
