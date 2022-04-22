@@ -1,4 +1,4 @@
-import logo from '../../assets/logo.svg';
+import { IconLogo } from '../Icon/IconLogo';
 
 export function Navbar() {
   return (
@@ -7,9 +7,9 @@ export function Navbar() {
         <div>
           <ul>
             <li>
-              <img src={logo} alt="Logo" />
+              <IconLogo color={'#34313D'} />
             </li>
-            <li>
+            <li className="nav-left">
               <a href="!#">Features</a>
             </li>
             <li>

@@ -1,0 +1,36 @@
+.footer-container {
+  background-color: map-get($color, veryDarkViolet);
+}
+.footer-spaces {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0px;
+}
+.footer-menu {
+  color: #fff;
+  display: flex;
+  //   flex-direction: column;
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding-right: 80px;
+    strong {
+      padding-bottom: 10px;
+    }
+    li {
+      text-align: start;
+      font-size: 13px;
+      padding: 5px 0px;
+      &:hover {
+        color: map-get($color, cyanPrimary);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.social-media {
+  img {
+    padding: 0px 8px;
+  }
+}
