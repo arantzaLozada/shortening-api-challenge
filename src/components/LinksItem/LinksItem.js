@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-export function LinksItem() {
+export function LinksItem(props) {
   const [copied, setCopied] = useState(false);
   return (
     <>
       <section className="links-item-container">
         <li className="links-item">
           <div>
-            <span className="links-item--url">
-              https://www.frontendmentor.io/home
-            </span>
+            <span className="links-item--url">{props.url}</span>
           </div>
           <div>
-            <span className="links-item--shorter">
-              https://shrtco.de/o9kMSW
-            </span>
-            <CopyToClipboard text="yes" onCopy={() => setCopied(true)}>
+            <span className="links-item--shorter">{props.shorterURL}</span>
+            <CopyToClipboard
+              text={props.shorterURL}
+              onCopy={() => setCopied(true)}
+            >
               <button
                 className={
                   !copied
