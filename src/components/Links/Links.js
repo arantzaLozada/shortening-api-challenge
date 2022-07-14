@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Loading } from '../Loading/Loading';
 
 export function Links(props) {
   const [valueURL, setvalueURL] = useState('');
@@ -6,6 +7,7 @@ export function Links(props) {
   const onSubmit = (event) => {
     event.preventDefault();
     props.shorterURL(valueURL);
+    props.setLoading(true);
   };
 
   const onChange = (e) => {
@@ -25,7 +27,7 @@ export function Links(props) {
               onChange={onChange}
             />
             <button type="submit" className="links-btn">
-              Shorten It!
+              {!props.loading ? 'Shorten It!' : <Loading />}
             </button>
           </form>
         </div>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import axios from 'axios';
 
 import { Footer } from '../components/Footer/Footer';
@@ -12,6 +13,7 @@ import '../scss/app.scss';
 
 export function App() {
   const [dataURL, setDataURL] = useLocalStorage('SHORTER_URL', []);
+  const [loading, setLoading] = useState(false);
 
   const shorterURL = async (url) => {
     try {
@@ -23,6 +25,7 @@ export function App() {
       const newURL = [...dataURL];
       newURL.push({ url: url, shorterURL: dataJSON.result.full_short_link });
       setDataURL(newURL);
+      setLoading(false);
     } catch (error) {
       if (error.response.data.error_code === 1) {
         console.log('Please add a link');
@@ -36,7 +39,7 @@ export function App() {
     <>
       <Navbar />
       <Header />
-      <Links shorterURL={shorterURL}>
+      <Links loading={loading} setLoading={setLoading} shorterURL={shorterURL}>
         {dataURL.map((value) => (
           <LinksItem
             key={value.url}
