@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Loading } from '../Loading/Loading';
 
 export function Links(props) {
   const [valueURL, setvalueURL] = useState('');
+  const inputRef = useRef(null);
+  console.log(inputRef);
 
   const onSubmit = (event) => {
     event.preventDefault();
     props.shorterURL(valueURL);
     props.setLoading(true);
+    inputRef.current.value = '';
   };
 
   const onChange = (e) => {
@@ -25,6 +28,7 @@ export function Links(props) {
               type="text"
               placeholder="Shorten a link here..."
               onChange={onChange}
+              ref={inputRef}
             />
             <button type="submit" className="links-btn">
               {!props.loading ? 'Shorten It!' : <Loading />}
