@@ -29,6 +29,7 @@ export function App() {
     } catch (error) {
       if (error.response.data.error_code === 1) {
         console.log('Please add a link');
+        setLoading(false);
       }
     }
   };
