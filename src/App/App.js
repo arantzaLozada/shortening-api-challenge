@@ -14,6 +14,7 @@ import '../scss/app.scss';
 export function App() {
   const [dataURL, setDataURL] = useLocalStorage('SHORTER_URL', []);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const shorterURL = async (url) => {
     try {
@@ -27,10 +28,12 @@ export function App() {
       setDataURL(newURL);
       setLoading(false);
     } catch (error) {
-      if (error.response.data.error_code === 1) {
-        console.log('Please add a link');
-        setLoading(false);
-      }
+      setError(error);
+      setLoading(false);
+      // if (error.response.data.error_code === 1) {
+      //   console.log('Please add a link');
+      //   setLoading(false);
+      // }
     }
   };
 
@@ -40,7 +43,12 @@ export function App() {
     <>
       <Navbar />
       <Header />
-      <Links loading={loading} setLoading={setLoading} shorterURL={shorterURL}>
+      <Links
+        loading={loading}
+        setLoading={setLoading}
+        shorterURL={shorterURL}
+        error={error}
+      >
         {dataURL.map((value) => (
           <LinksItem
             key={value.url}

@@ -16,11 +16,29 @@
   top: -60px;
 }
 
+.links-container__form {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.links-container__input {
+  display: flex;
+  flex-direction: column;
+}
+
 .links-input {
   margin-right: 10px;
   width: 600px;
   padding: 16px 25px;
   border-radius: 10px;
+  border: none;
+  &--error {
+    border: 2px solid map-get($color, redSecondary);
+    &::placeholder {
+      color: map-get($color, redSecondary);
+    }
+  }
 }
 
 .links-btn {
@@ -33,4 +51,8 @@
   &:hover {
     background-color: #aedfdf;
   }
+}
+.links-error {
+  padding-top: 5px;
+  color: map-get($color, redSecondary);
 }

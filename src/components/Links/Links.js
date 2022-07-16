@@ -20,16 +20,27 @@ export function Links(props) {
       <section className="links">
         <div className="container links-container">
           <form onSubmit={onSubmit}>
-            <input
-              className="links-input"
-              type="text"
-              placeholder="Shorten a link here..."
-              onChange={onChange}
-              value={valueURL}
-            />
-            <button type="submit" className="links-btn">
-              {!props.loading ? 'Shorten It!' : <Loading />}
-            </button>
+            <div className="links-container__form">
+              <div className="links-container__input">
+                <input
+                  className={
+                    !props.error
+                      ? 'links-input'
+                      : 'links-input links-input--error'
+                  }
+                  type="text"
+                  placeholder="Shorten a link here..."
+                  onChange={onChange}
+                  value={valueURL}
+                />
+                <span className="links-error">
+                  {props.error && 'Please add a link'}
+                </span>
+              </div>
+              <button type="submit" className="links-btn">
+                {!props.loading ? 'Shorten It!' : <Loading />}
+              </button>
+            </div>
           </form>
         </div>
         <ul className="container">{props.children}</ul>
