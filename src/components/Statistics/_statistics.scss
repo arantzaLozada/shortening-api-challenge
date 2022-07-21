@@ -9,7 +9,10 @@
   margin-bottom: 100px;
   h2 {
     color: map-get($color, darkViolet);
-    font-size: 35px;
+    font-size: 28px;
+    @include breakpoint(tablet) {
+      font-size: 35px;
+    }
   }
   p {
     margin-top: 20px;
@@ -24,13 +27,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  @include breakpoint(tablet) {
+    flex-direction: row;
+  }
   .card {
     background-color: #fff;
     max-width: 370px;
     height: 270px;
     border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(tablet) {
+      display: block;
+    }
     .card-img {
-      margin-left: 30px;
+      margin-left: 0px;
       width: 80px;
       height: 80px;
       background-color: map-get($color, darkViolet);
@@ -40,12 +56,19 @@
       justify-content: center;
       position: relative;
       top: -30px;
+      @include breakpoint(tablet) {
+        margin-left: 30px;
+      }
     }
     .card-content {
       padding: 0px 30px;
       h3 {
         color: map-get($color, veryDarkViolet);
         font-weight: 700;
+        text-align: center;
+        @include breakpoint(tablet) {
+          text-align: left;
+        }
       }
       p {
         margin-top: 15px;
@@ -53,6 +76,10 @@
         color: map-get($color, rayishViolet);
         line-height: 1.8;
         font-weight: 500;
+        text-align: center;
+        @include breakpoint(tablet) {
+          text-align: left;
+        }
       }
     }
     &--second {
@@ -67,9 +94,16 @@
 }
 
 .line-desktop {
-  width: 50px;
+  width: 90px;
+  transform: rotate(90deg);
+  position: relative;
+  top: 20px;
   background-color: map-get($color, cyanPrimary);
   border: 5px solid map-get($color, cyanPrimary);
+  @include breakpoint(tablet) {
+    width: 50px;
+    transform: none;
+  }
 }
 
 //SECTION BANNER
@@ -78,14 +112,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 250px;
+  padding: 50px;
   background-image: url('../../assets/bg-shorten-desktop.svg'),
     linear-gradient(#3b3054, #3b3054 100%);
   background-size: cover;
   h2 {
     color: #fff;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 24px;
+    @include breakpoint(tablet) {
+      font-size: 40px;
+    }
   }
   button {
     margin-top: 20px;

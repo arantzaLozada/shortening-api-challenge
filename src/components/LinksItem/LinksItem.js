@@ -7,10 +7,11 @@ export function LinksItem(props) {
     <>
       <section className="links-item-container">
         <li className="links-item">
-          <div>
+          <div className="links-mobile-url">
             <span className="links-item--url">{props.url}</span>
           </div>
-          <div>
+          <div className="border-mobile-links"></div>
+          <div className="links-mobile-url">
             <span className="links-item--shorter">{props.shorterURL}</span>
             <CopyToClipboard
               text={props.shorterURL}

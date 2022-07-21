@@ -14,12 +14,21 @@
   background-size: cover;
   position: relative;
   top: -60px;
+  margin: 0px 20px;
+  @include breakpoint(tablet) {
+    margin: auto;
+  }
 }
 
 .links-container__form {
   display: flex;
-  justify-content: center;
-  align-items: baseline;
+  flex-direction: column;
+  @include breakpoint(tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+  }
 }
 
 .links-container__input {
@@ -28,8 +37,7 @@
 }
 
 .links-input {
-  margin-right: 10px;
-  width: 600px;
+  margin-right: 0px;
   padding: 16px 25px;
   border-radius: 10px;
   border: none;
@@ -39,6 +47,10 @@
       color: map-get($color, redSecondary);
     }
   }
+  @include breakpoint(tablet) {
+    width: 600px;
+    margin-right: 10px;
+  }
 }
 
 .links-btn {
@@ -47,9 +59,12 @@
   background-color: map-get($color, cyanPrimary);
   border-radius: 10px;
   padding: 16px 25px;
-  margin-left: 10px;
+  margin-left: 0px;
   &:hover {
     background-color: #aedfdf;
+  }
+  @include breakpoint(tablet) {
+    margin-left: 10px;
   }
 }
 .links-error {

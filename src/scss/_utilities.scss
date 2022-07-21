@@ -1,6 +1,12 @@
 .container {
   max-width: 1200px;
   margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  @include breakpoint(tablet) {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
   // border: $debug;
 }
 
@@ -16,6 +22,7 @@
   background-color: map-get($color, cyanPrimary);
   border-radius: 25px;
   padding: 13px 20px;
+  margin: auto;
   &:hover {
     background-color: #aedfdf;
   }

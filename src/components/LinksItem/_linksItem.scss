@@ -4,17 +4,42 @@
 .links-item {
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   width: inherit;
   border-radius: 10px;
-  padding: 16px 26px;
+
   &--url {
     color: map-get($color, veryDarkBlue);
   }
   &--shorter {
     color: map-get($color, cyanPrimary);
     margin-right: 20px;
+    display: block;
+    @include breakpoint(tablet) {
+      display: inline-block;
+    }
+  }
+  @include breakpoint(tablet) {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 16px 26px;
+  }
+}
+.links-mobile-url {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 26px;
+  @include breakpoint(tablet) {
+    padding: 0px;
+  }
+}
+.border-mobile-links {
+  background-color: #eff1f7;
+  border: 1px solid #eff1f7;
+  @include breakpoint(tablet) {
+    display: none;
   }
 }
 
@@ -25,6 +50,12 @@
   background-color: map-get($color, cyanPrimary);
   border-radius: 10px;
   padding: 10px 25px;
+  width: 100%;
+  margin-top: 10px;
+  @include breakpoint(tablet) {
+    width: initial;
+    margin-top: 0px;
+  }
   &--hover:hover {
     background-color: #aedfdf;
   }
